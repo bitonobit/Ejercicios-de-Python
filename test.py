@@ -1,19 +1,21 @@
+# 1. Dados dos números, escriba un código Python para encontrar el mínimo de estos dos números
 def minimum(a,b):
     if a<=b:    
         return a
     else:
         return b
-# print(minimum(2,4))
+print(minimum(2,4))
 
+# 2. Invertir palabras de una cadena dada.
 def palindromo(frase):
     palabras= frase.split( )
     pal=' '.join(reversed(palabras))
     return pal
 
-# if __name__=="__main__":
-#     print(palindromo(input("Dime la frase: ")))
+if __name__=="__main__":
+    print(palindromo(input("Dime la frase: ")))
 
-# Realizar la suma de los elementos de una tupla
+# 3. Realizar la suma de los elementos de una tupla y 4 igual pero con listas
 tupla=(7,8,9,1,19,7)
 print(f"Los valores a sumar son: {tupla}")
 def sumar(tupla):
