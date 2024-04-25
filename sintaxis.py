@@ -575,6 +575,7 @@ else:
 if a==0: print("a es igual a 0")    #Si corto
 print(a) if a>b else print(b)       #Si sino corto
 print("a es mayor") if a > b else print("iguales") if a == b else print("b es mayor") #si con 3 condiciones
+
 # *******************************************************************************
 #                          Bucles
 # *******************************************************************************
@@ -614,6 +615,65 @@ for x in range(1, 30, 3):
   print(x)                #Cuenta del 1 al 30, pero de 3 en 3
 else:
   print("Terminé!")
+
+# *******************************************************************************
+#                          Funciones
+# *******************************************************************************
+def miFuncion():
+  print("Hola mundo!")
+
+miFuncion()     #Llamada a la función
+
+#Parámetros
+def nombreCompleto(fname, lname):
+  print(fname+ " " + lname)
+
+def ejemplo1(*parametros):     #agregar *delante del parametro permite recibir una tupla de n elementos
+  for x in parametros:        #Se le llama argumentos arbitrarios
+    print(x)
+
+def ejemplo2(**param):         #agregar ** delante del parametro permite recibir un diccionario
+  for x in param:             #Se le llama argumentos arbitrarios
+    print(x)
+
+def ejemplo3(nombre="Candy"):  #Define un parámetro predeterminado, asi puedes llamar a la función sin argumentos
+    print(nombre)
+
+ejemplo3()
+
+
+# Una función lambda es una pequeña función anónima. Una función lambda puede tomar cualquier número de argumentos, pero solo puede tener una expresión.Sintaxis: lambda arguments : expression
+
+x = lambda a: a + 10      #Agregue 10 al argumento ay devuelva el resultado
+print(x(5))
+
+x = lambda a, b : a * b   #Multiplica argumento apor argumento by devuelve el resultado:
+print(x(5, 6))
+
+x = lambda a, b, c : a + b + c
+print(x(5, 6, 2))
+
+# El poder de lambda se muestra mejor cuando los usa como una función anónima dentro de otra función.
+def mifunc(n):
+  return lambda a : a * n
+
+
+def mifunc2(n):
+  return lambda a : a * n
+
+doble = mifunc2(2)
+print(doble(10))    #Devolverá un 20 
+
+
+# Python no tiene array de forma nativa hay que usar listas o importar una librería como NumPy
+
+
+
+
+
+
+
+
 
 
 
