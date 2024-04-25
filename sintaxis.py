@@ -302,6 +302,16 @@ print(bool(0))              # Devuelve False
 bool(["A", "B", "C"])       # Devuelve True
 bool([])                    # Devuelve False
 
+# Colecciones de Python (matrices)
+# ====================================================================================
+# Hay cuatro tipos de datos de recopilación en el lenguaje de programación Python:
+# 1. Lista es una colección ordenada y modificable. Permite miembros duplicados.
+# 2. Tupla es una colección ordenada e inmutable. Permite miembros duplicados.
+# 3. Set es una colección desordenada, inmutable y no indexada. 
+# No hay miembros duplicados. Los elementos establecidos no se pueden cambiar,
+# pero puedes eliminar y/o agregar elementos cuando quieras
+# 4. El diccionario es una colección ordenada (A partir de Pytho 3.7) y modificable. 
+# No hay miembros duplicados.
 
 # *******************************************************************************
 #                          Listas
@@ -341,7 +351,7 @@ if 5 in a:
 # *******************************************************************************
 #                         Métodos de Listas
 # *******************************************************************************
-nElementos=a.count()    # Cuenta el número de elementos de la lista
+len(a)                  # Cuenta el número de elementos de la lista
 a.insert(2, "x")        # Inserta el caracter x en la posición 2
 a.append("y")           # Inserta el caracter x en la última posición
 b=[22,44,33,67]
@@ -358,6 +368,7 @@ del a[5]                # Remueve el elemento en la posición 5
 del a                   # Elimina la lista por completo
 a.clear()               # Limpia la lista
 a.index(22)             # Devuelve el índice del elemento encontrado
+nElementos=a.count("x")    # Cuenta el número de ocurrencias de un elemento
 a.sort()                # Ordena una lista ascendentemente
 a.sort(reverse = True)  # Ordena una lista descendentemente
 b = a.copy()            # Copiar una lista
@@ -392,23 +403,217 @@ listaMayusculas = [x.upper() for x in alumnos]    # Crea los valores de la nueva
 # Condicionar la creación de la lista:
 listaCondicionada = [x if x != "Ana" else "Rafael" for x in a]  #Cambia las Ana por Rafael
 
+# *******************************************************************************
+#                        Tuplas
+# Una tupla es una colección ordenada e inmutable, no se pueden modificar y 
+# permiten valores duplicados.
+# *******************************************************************************
+t=(3,4,2,7,6)
+print(len(t))
+# Crear una tupla de 1 elemento
+t1=(8,)   #La coma es necesaria
+t2=tuple((5,"a", 3))  # Crear una tupla usando el constructor
+print(t2[1]) # Muestra el elemento "a"
+print(t2[-1]) # Muestra el elemento 3, osea el último
+print(t2[0:2]) # Muestra el 5 y la a porque no incluye la posición 2
+print(t2[:2]) # Muestra desde el principio hasta la posición 1
+print(t2[1:]) # Muestra desde la posición 1 hasta el final
+if "a" in t2:
+  print(" a esta en la tupla")
+# Las tuplas son inmutables, así que para cambiar un elemento puedes convertirla en una lista y luego en una tupla otra vez
+t3 = ("a", "b", "c")
+l1 = list(t3)
+l1[1] = "x"     # Cambia el elemento de la posición 1
+l1.append("d")  # Agrega un elemento al final
+t3 = tuple(l1)
+t4=("e",)
+t3+=t4          # Tambien agrega un valor o más al final
+print(t3)
+# No se pueden eliminar elementos de una tupla, a menos que la conviertas en una lista :)
+del t4    # Borra la tupla por completo y si tratas de hacer unprint de t4 te da error
 
+#Las tuplas tambien se pueden desempaquetar
+(a, b, c, d, e) = t3    # Una variable para cada valor
+(a,b, *letras)=t3       # O un asterísco para crear una lista con las que sobran
+(a, *x, e)=t3           #Tambien hace una lista, en este caso intermedia
 
+multiplica=t4*2         #Multiplica la tupla por dos (la repite) y la guarda en multiplica como si hubiese hecho t4 + t4
+t4.count("c")     #Busca cuantas c hay en la tupla, 1
+t4.index("c")     #Busca la primera ocurrencia de c y devuelve la posición
+
+# *******************************************************************************
+#                        set
+# Un conjunto es una colección desordenada, inmutable * y no indexada. Se pueden
+# eliminar y agregar elementos, pero no cambiarlos
+# NOOO permiten valores duplicados.
+# *******************************************************************************
+s1={"a", "b", "c"}      #Los elementos pueden aparecer en un orden diferente cada vez que los usas y no se puede hacer referencia a ellos mediante índice o clave.
+
+# True y 1 serían iguales y los toma como duplicados, False y 0 lo mismo
+print(len(s1))    #Longitud
+
+s2 = {"abc", 34, True, 40, "ver"}   #Puede contener distintos tipos de elementos
+s3=set((1,2,3))                     #Con el constructor recuerda usar doble (())
+
+# Recorre el conjunto e imprime los valores:
+for x in s2:
+  print(x)
+
+print("c" in s1)        #Comprueba si c está en s1
+print("c" not in s1)    #Comprueba si c NO está en s1
+s1.add("d")             #Agrega un elemento
+s1.update(s2)           #Agrega un conjunto de elementos a s1, también puede agregar cualquier iterable
+s1.remove("b")          #Elimina un elemento, si el elemento no existe en el conjunto dará error
+s1.discard("b")         #Elimina un elemento, si el elemento no existe en el conjunto NO dará error
+s1.pop()                #Elimina un elemento aleatoriamente
+s1.clear()              #Vacía el conjunto
+del s1                  #Elimina el conjunto por completo, es decir s1 ya no existe
+s1={"a", "b", "c"}
+s4=s2.union(s3)         #Unión de conjuntos
+s4=s2 | s3              #Unión de conjuntos, da el mismo resultado
+s5=s1.union(s2,s3,s4)   #Unión de varios conjuntos
+s6=s5.intersection(s1)  #Conserva sólo los valores duplicados, es decir, que estén en ambos conjuntos
+s6=s5 & s1              #Da el mismo resultado, pero está limitado a unir sólo conjuntos con conjuntos
+s6.intersection_update(s1)  #Hace lo mismo, pero sicambia el conjunto s6
+s7= s6-s5               #Devuelve un nuevo conjunto que contendrá solo los elementos del s6 que no están  presentes en s5.
+s8=s1.diference(s2)     #Hace lo mismo que la anterior
+s8.diference_update(s2) #Hace lo mismo que la anterior
+s9= s8.symetric_diference(s7) #Mantiene sólo los elemntos que no esté en ambos conjuntos
+s9= s8^s7               #Hace lo mismo que la anterior
+s8.symetric_diference_update(s7) #Mantiene sólo los elemntos que no esté en ambos conjuntos modificando el original
+s10=s9.copy()           #Copia el conjunto
+x = s10.isdisjoint(s9)  #Devuelve True si no hay ningún elemento del conjunto s10 presente en el conjunto s9
+x = s10.issubset(s9)    #Devuelve True si todos los elementos del conjunto s10 están presente en el conjunto s9
+
+# **************************************************************************************
+#                        Diccionario
+# Los diccionarios se utilizan para almacenar valores de datos en pares clave:valor.
+# Un diccionario es una colección ordenada*, modificable y que NO permite duplicados.
+# Los diccionarios se pueden cambiar, lo que significa que podemos cambiar, agregar o 
+# eliminar elementos una vez creado el diccionario.
+# Los valores de los elementos del diccionario pueden ser de cualquier tipo de datos
+# **************************************************************************************
+
+coche = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(coche)
+print(len(coche))   #Longitud
+print(type(coche))  #Devuelve el tipo dict
+
+persona=dict(nombre='Candy', Apellido="González", edad=50)
+x=persona["nombre"]
+y=persona.get("nombre")   #Accede al valor de la propiedad
+z=persona.keys()          #Devuelve todas las claves del diccionario
+
+coche["color"]="Blanco" #Agrega una nueva propiedad
+x=coche.values()        #Devolverá una lista de todos los valores del diccionario.
+y=coche.items()         #Devolverá cada elemento del diccionario, como tuplas en una lista.
+if "color" in coche:
+  print("Si está")
+
+coche["color"]="Azul"   #Cambia el valor de una propiedad
+coche.update("Rojo")    #Cambia el valor de una propiedad, si no existe se crea la propiedad
+coche.pop("color")      #Elimina una propiedad
+coche.popitem()         #Elimina la última propiedad a partir de la versión 3.7
+del coche["year"]       #Elimina la propiedad especificada
+del coche               #Elimina todo el diccionario
+persona.clear()         #Vacía el diccionario
+coche = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+for x in coche:
+  print(x)            #Imprime los nombres de las propiedades
+
+for x in coche.keys():
+  print(x)            #Imprime los nombres de las propiedades
+
+for x in coche:
+  print(coche[x])     #Imprime los valores de las propiedades
+
+for x in coche.values():
+  print(x)           #Imprime los valores de las propiedades
+
+for x, y in coche.items():
+  print(x, y)           #Imprime las claves y los valores 
+
+d1=coche.copy()     #Hace una copia
+d2=dict(d1)         #Tambien hace una copia
+# Diciionarios anidados
+biblioteca={
+  "libro1" : {
+              "titulo": "Los renglones torcidos de Dios",
+              "autor": "Torcuato Luca de Teno",
+              "pag": 512
+            },
+ "libro2" : {
+              "titulo": "El tiempo entre costuras",
+              "autor": "María Dueñas",
+              "pag": 640
+            },            
+}
+
+print(biblioteca["libro1"]["autor"])
+
+# *******************************************************************************
+#                          Condicionales
+# *******************************************************************************
+a = 10
+b = 20
+if b > a:
+  print("b es mayor que a")
+elif a == b:
+  print("a y b son iguales")
+else:
+  print("a es mayor que b")
+
+if a==0: print("a es igual a 0")    #Si corto
+print(a) if a>b else print(b)       #Si sino corto
+print("a es mayor") if a > b else print("iguales") if a == b else print("b es mayor") #si con 3 condiciones
 # *******************************************************************************
 #                          Bucles
 # *******************************************************************************
-# Bucles a través de una cadena
-for x in "Bitonobit":
-  print(x)
 
 i = 0
 while i < 10:
   print(i)
   i = i + 1
+#  Se puede usar break y continue igual que en php o js
+i = 1
+while i < 5:
+  print(i)
+  i += 1
+else:
+  print("i no es mayor que 5")        #Se ejecuta una vez cuando la condición ya no es verdadera
 
+# Bucles a través de una cadena
+for x in "Bitonobit":
+  print(x)
 
+for i in range(len(t3)):
+  print(t3[i])            #Recorre la tupla t3
 
+a = ["Carlos", "Ana", "María", "Ana"]
+for x in a:
+  print(x)
+  if x == "Ana":
+    continue
 
+for x in range(6):
+  print(x)
+
+for x in range(2, 6):
+  print(x)
+
+for x in range(1, 30, 3):
+  print(x)                #Cuenta del 1 al 30, pero de 3 en 3
+else:
+  print("Terminé!")
 
 
 
