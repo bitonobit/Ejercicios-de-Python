@@ -667,7 +667,7 @@ print(doble(10))    #Devolverá un 20
 
 # Python no tiene array de forma nativa hay que usar listas o importar una librería como NumPy
 
-
+# https://www.w3schools.com/python/numpy/default.asp
 
 
 
