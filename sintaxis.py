@@ -357,6 +357,7 @@ a.append("y")           # Inserta el caracter x en la última posición
 b=[22,44,33,67]
 a.extend(b)             # Agregar elementos de otra lsita
 d= a + b                # Otra forma de unir dos listas
+print(a)
 # El extend()método no tiene que agregar listas , puede agregar cualquier objeto iterable
 c=(99,98,97)
 a.extend(c)
@@ -365,12 +366,12 @@ a.remove("x")           # Remueve la primera aparición de x
 a.pop(2)                # Remueve el elemento en la posición 2
 a.pop()                 # Remueve el último elemento 
 del a[5]                # Remueve el elemento en la posición 5
-del a                   # Elimina la lista por completo
-a.clear()               # Limpia la lista
+#del a                   # Elimina la lista por completo
+#a.clear()               # Limpia la lista
 a.index(22)             # Devuelve el índice del elemento encontrado
 nElementos=a.count("x")    # Cuenta el número de ocurrencias de un elemento
-a.sort()                # Ordena una lista ascendentemente
-a.sort(reverse = True)  # Ordena una lista descendentemente
+b.sort()                # Ordena una lista ascendentemente
+b.sort(reverse = True)  # Ordena una lista descendentemente
 b = a.copy()            # Copiar una lista
 c = list(b)             # Otra forma de copiar una lista
 
@@ -437,9 +438,9 @@ del t4    # Borra la tupla por completo y si tratas de hacer unprint de t4 te da
 (a,b, *letras)=t3       # O un asterísco para crear una lista con las que sobran
 (a, *x, e)=t3           #Tambien hace una lista, en este caso intermedia
 
-multiplica=t4*2         #Multiplica la tupla por dos (la repite) y la guarda en multiplica como si hubiese hecho t4 + t4
-t4.count("c")     #Busca cuantas c hay en la tupla, 1
-t4.index("c")     #Busca la primera ocurrencia de c y devuelve la posición
+multiplica=t3*2         #Multiplica la tupla por dos (la repite) y la guarda en multiplica como si hubiese hecho t3 + t3
+t3.count("c")     #Busca cuantas c hay en la tupla, 1
+t3.index("c")     #Busca la primera ocurrencia de c y devuelve la posición
 
 # *******************************************************************************
 #                        set
@@ -476,11 +477,11 @@ s6=s5.intersection(s1)  #Conserva sólo los valores duplicados, es decir, que es
 s6=s5 & s1              #Da el mismo resultado, pero está limitado a unir sólo conjuntos con conjuntos
 s6.intersection_update(s1)  #Hace lo mismo, pero sicambia el conjunto s6
 s7= s6-s5               #Devuelve un nuevo conjunto que contendrá solo los elementos del s6 que no están  presentes en s5.
-s8=s1.diference(s2)     #Hace lo mismo que la anterior
-s8.diference_update(s2) #Hace lo mismo que la anterior
-s9= s8.symetric_diference(s7) #Mantiene sólo los elemntos que no esté en ambos conjuntos
+s8=s1.difference(s2)     #Hace lo mismo que la anterior
+#s10.diference_update(s2) #Hace lo mismo que la anterior
+s9= s8.symmetric_difference(s7) #Mantiene sólo los elemntos que no esté en ambos conjuntos
 s9= s8^s7               #Hace lo mismo que la anterior
-s8.symetric_diference_update(s7) #Mantiene sólo los elemntos que no esté en ambos conjuntos modificando el original
+s8.symmetric_difference_update(s7) #Mantiene sólo los elemntos que no esté en ambos conjuntos modificando el original
 s10=s9.copy()           #Copia el conjunto
 x = s10.isdisjoint(s9)  #Devuelve True si no hay ningún elemento del conjunto s10 presente en el conjunto s9
 x = s10.issubset(s9)    #Devuelve True si todos los elementos del conjunto s10 están presente en el conjunto s9
@@ -515,7 +516,7 @@ if "color" in coche:
   print("Si está")
 
 coche["color"]="Azul"   #Cambia el valor de una propiedad
-coche.update("Rojo")    #Cambia el valor de una propiedad, si no existe se crea la propiedad
+coche.update("color")    #Cambia el valor de una propiedad, si no existe se crea la propiedad
 coche.pop("color")      #Elimina una propiedad
 coche.popitem()         #Elimina la última propiedad a partir de la versión 3.7
 del coche["year"]       #Elimina la propiedad especificada
