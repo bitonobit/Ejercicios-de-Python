@@ -846,3 +846,9 @@ miModulo.saluda("Candy")  #Llama a la función
 import miModulo as m  #Crea un alias
 
 # Hay varios módulos integrados en Python, que puedes importar cuando quieras.
+
+# Puedes optar por importar solo partes de un módulo utilizando la palabra clave from
+
+from miModulo import saludo
+saludo("Candy")
+# Nota: Al importar utilizando from no se usa el nombre del módulo cuando haces referencia a sus elementos Ejemplo: saludo("Candy"), no miModulo.saludo("Candy")
