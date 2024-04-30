@@ -516,7 +516,7 @@ if "color" in coche:
   print("Si está")
 
 coche["color"]="Azul"   #Cambia el valor de una propiedad
-coche.update("color")    #Cambia el valor de una propiedad, si no existe se crea la propiedad
+coche.update("rojo")    #Cambia el valor de una propiedad, si no existe se crea la propiedad
 coche.pop("color")      #Elimina una propiedad
 coche.popitem()         #Elimina la última propiedad a partir de la versión 3.7
 del coche["year"]       #Elimina la propiedad especificada
@@ -665,33 +665,184 @@ def mifunc2(n):
 doble = mifunc2(2)
 print(doble(10))    #Devolverá un 20 
 
-
 # Python no tiene array de forma nativa hay que usar listas o importar una librería como NumPy
-
 # https://www.w3schools.com/python/numpy/default.asp
 
 
+# **************************************************************************************
+#                        Clasees y Objetos
+# Python es un lenguaje de programación orientado a objetos.
+# Casi todo en Python es un objeto, con sus propiedades y métodos.
+# Una clase es como un constructor de objetos o una "plantilla" para crear objetos.
+# **************************************************************************************
+class MiClase:      #Crea una clase
+  x = 5
+
+p1 = MiClase()      #Crea un objeto de la clase MiClase
+print(p1.x)
+
+# Todas las clases tienen una función llamada __init__(), que siempre se ejecuta cuando se inicia la clase.
+
+class Persona:
+  def __init__(self, nombre, apellidos, edad):  
+    self.nombre = nombre
+    self.apellidos = apellidos
+    self.edad = edad
+    #La __init__()función se llama automáticamente cada vez que se utiliza la clase para crear un nuevo objeto.
+p1 = Persona("Candy", "González", 51)
+
+print(p1.nombre, p1.apellidos, p1.edad)
+
+# La función __str__() controla lo que se debe devolver cuando el objeto de clase se representa como una cadena.
+
+print(p1)     # Si la función __str__() no está configurada, se devuelve la representación de cadena del objeto, algo como: <__main__.Person object at 0x15039e602100>
+
+# self es una referencia a la instancia actual de la clase y se utiliza para acceder a variables que pertenecen a la clase.
+class Alumno:
+  def __init__(self, nombre, edad):
+    self.nombre = nombre
+    self.edad = edad
+
+  def __str__(self):
+    return f"{self.nombre}({self.edad})"
+  #Métodos
+  def saludar(self):        
+    print("Hola pepsicola!! Bienvenida " + self.nombre)
+
+p1 = Alumno("Candy", 26)
+
+print(p1)
+
+# Modificar una propiedad
+p1.edad=51
+del p1.edad       #Elimina la propiedad edad
+del p1            #Elimina el objeto p1
+
+# La herencia nos permite definir una clase que hereda todos los métodos y propiedades de otra clase.
+# La clase principal es la clase de la que se hereda, también llamada clase base o padre.
+# La clase hija es la clase que hereda de otra clase, también llamada clase derivada.
+class Estudiante(Persona):
+  pass      #Se usa cuando no quieres agregar nada más a la clase
+
+# Ahora la clase estudiante hereda todo de la clase persona
+p1=Estudiante("Ana", 20)
+print(p1.nombre)
 
 
+#Cuando agregamos __init__(), la clase ya no heredará la función __init__()  de la clase principal. Para mantener la herencia  debemos agregar una llamada a la función principal __init__():
+class Profesora(Persona):
+  def __init__(self, nombre, apellidos, edad):     
+    Persona.__init__(self, nombre, apellidos, edad)    #Llamada a la clase principal para mantener la herencia
 
 
+class Administrativo(Persona):
+  def __init__(self, nombre, apellidos, edad, dni):
+    super().__init__(nombre, apellidos, edad)          #Hace que se hereden todas las propiedades y métodos de la clase padre
+    self.dni=dni                                       #Agregamos una prpopiedad aquí y en los parámetros de la función inint
+  #Métodos
+  def nombreCompleto(self):
+    print("Bienvenido ", self.apellidos, ", ", self.nombre)        
+    #PD: Si agregamos un método en la clase secundaria con el mismo nombre que uno de la clase principal, se anulará la herencia del método principal.
+
+p2=Administrativo("Andres", "Glez", 25, "12345678Z")
+p2.nombreCompleto()
+
+# Un iterador es un objeto que contiene un número contable de valores. Es un objeto que implementa el protocolo del iterador, que consta de los métodos __iter__() y __next__().
+
+# Las listas, tuplas, diccionarios y conjuntos son todos objetos iterables. Son contenedores iterables de los que puede obtener un iterador.
+
+# Todos estos objetos tienen un iter()método que se utiliza para obtener un iterador:
+tuplaN = ("A", "B", "C")
+iterable = iter(tuplaN)
+print(next(iterable))
+print(next(iterable))
+print(next(iterable))
+
+# Crear un iterador que devuelva números, comenzando con 1, y cada secuencia aumentará en uno (devolviendo 1,2,3,4,5, etc.). Para crear un objeto/clase como iterador, debe implementar los métodos __iter__()y __next__()su objeto.
+class MiIterador:
+  def __iter__(self):
+    self.a = 1
+    return self
+
+  def __next__(self):
+    x = self.a
+    self.a += 1
+    return x
+
+miClase = MiIterador()
+miIter = iter(miClase)
+
+print(next(miIter))
+print(next(miIter))
+print(next(miIter))
+print(next(miIter))
+print(next(miIter))
+
+# Polimorfismo: El polimorfismo se usa a menudo en métodos de clase, donde podemos tener varias clases con el mismo nombre de método.
+class Car:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):     #mismo nombre de método, diferentes acciones
+    print("Drive!")
+
+class Boat:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):     
+    print("Sail!")
+
+class Plane:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Fly!")
+
+car1 = Car("Ford", "Mustang")       #Create a Car class
+boat1 = Boat("Ibiza", "Touring 20") #Create a Boat class
+plane1 = Plane("Boeing", "747")     #Create a Plane class
+
+for x in (car1, boat1, plane1):
+  x.move()
 
 
+  # Una variable creada en el cuerpo principal del código Python es una variable global y pertenece al ámbito global. Las variables globales están disponibles desde cualquier ámbito, global y local.
+  # Si opera con el mismo nombre de variable dentro y fuera de una función, Python las tratará como dos variables separadas, una disponible en el alcance global (fuera de la función) y otra disponible en el alcance local (dentro de la función):
+x = 300
+y=100
+def myfunc():
+  global y  
+  x = 200
+  print(x)  #Esta vale 200
 
+myfunc()
+print(x)    #Esta vale 300
 
+# La nonlocalpalabra clave se utiliza para trabajar con variables dentro de funciones anidadas.
 
+# La nonlocalpalabra clave hace que la variable pertenezca a la función externa.
 
-#   Personalizar la función de clasificación https://www.w3schools.com/python/python_lists_sort.asp
-# También puede personalizar su propia función utilizando el argumento de palabra clave .key = function
+def fun1():
+  x = "Candy"
+  def fun2():
+    nonlocal x
+    x = "Ana"
+  fun2()
+  return x
 
-# La función devolverá un número que se utilizará para ordenar la lista (el número más bajo primero):
+print(fun1())
 
-# Ejemplo
-# Ordena la lista según lo cerca que esté el número de 50:
+# Considera que un módulo es lo mismo que una biblioteca de códigos.Un archivo que contiene un conjunto de funciones que desea incluir en su aplicación.
+import miModulo           #Importas el módulo
+miModulo.saluda("Candy")  #Llama a la función
 
-# def myfunc(n):
-#   return abs(n - 50)
+# Nota: Cuando utilices una función de un módulo, utiliza la sintaxis: nombre_módulo.nombre_función 
 
-# thislist = [100, 50, 65, 82, 23]
-# thislist.sort(key = myfunc)
-# print(thislist)
+import miModulo as m  #Crea un alias
+
+# Hay varios módulos integrados en Python, que puedes importar cuando quieras.
