@@ -1,6 +1,6 @@
-from math import pi
+from math import pi         #Importa pi desde el módulo de matemáticas
 
-#Función con la excepción TypeError y verificación de negativos
+#Función para calvular el área de un círculo, con la excepción TypeError y verificación de negativos
 def area(r):
 #Verificamos los tipos correctos
     if type(r) not in [float, int]:
