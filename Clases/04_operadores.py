@@ -1,7 +1,6 @@
-
-# *******************************************************************************
-#                         Operadores Aritméticos
-# *******************************************************************************
+# *************************************************
+#            Operadores Aritméticos
+# *************************************************
 # Operator	    Name	           Ejemplo
 #   +	        Suma       	        x + y	
 #   -	        Resta	            x - y	
@@ -11,9 +10,35 @@
 #   **          Exponenciación	    x ** y	
 #   //          Floor división	    x // y
 
-# *******************************************************************************
-#                         Operadores de asignación
-# *******************************************************************************
+x1=2+3
+x2=5-4
+x3=2*8
+x4=6/3
+x5=8%2
+x6=3**2
+x7= 7//2
+# *************************************************
+#           Operadores de cancatenación
+# *************************************************
+# Operadores
+nombre='Candy'
+apellido='González'
+nombreCompleto= nombre + ' ' + apellido     # Concatenar 
+# NO se puede concatenar un cadena y un número, 
+# en su lugar se usa f{}
+edad = 51
+saludo = f"Mi nombre es Candy y tengo {edad} años"
+print(saludo)
+
+# Formateando un float
+pi=3.1415
+res=f"El valor de pi es {pi:.2f}"   #.2f son sólo 2 decimales
+print(res)
+res=f"El valor de pi es {10 *5}"    # Se pueden hacer operaciones matemáticas
+
+# *************************************************
+#           Operadores de asignación
+# *************************************************
 # Operador	    Ejemplo	    Igual a	 
 #   =	        x = 5	    x = 5	
 #   +=	        x += 3	    x = x + 3	

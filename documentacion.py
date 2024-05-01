@@ -33,6 +33,7 @@ imprimir = True
 if imprimir:
  print(x, d)
 # Salida: El valor de (a+b)*c es 14
+
 # VARIABLES
 # Lo ideal es declarar e inicializar siempre las variables.
 # ----------------------------------------------------------
@@ -62,7 +63,7 @@ s_textoLargo = """Esto es un mensaje
 s_edad = "47"
 # Declaración de constante:
 NUMEROPI = 3.14159
-# Declaración de un boolean
+# Declaración de un boolean:
 is_verdadero = True
 is_casado = False
 # True = 1 y False = 0
@@ -73,7 +74,7 @@ print(True + 2)
 print(10 > 9)
 print(10 == 9)
 print(10 < 9)
-# Declaración múltiple
+# Declaración múltiple 
 # En una sola instrucción, estamos 
 # declarando tres variables: a, b y c, y 
 # asignándoles un valor concreto a cada 

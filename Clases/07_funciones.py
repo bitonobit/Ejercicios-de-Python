@@ -20,15 +20,15 @@ suma()
 def nombreCompleto(fname, lname):
   print(fname+ " " + lname)
 
-def ejemplo1(*parametros):     #agregar *delante del parametro permite recibir una tupla de n elementos
-  for x in parametros:        #Se le llama argumentos arbitrarios
+def ejemplo1(*parametros):      #Agregar *delante del parametro permite recibir una tupla de n elementos
+  for x in parametros:          #Se le llama argumentos arbitrarios
     print(x)
 
-def ejemplo2(**param):         #agregar ** delante del parametro permite recibir un diccionario
-  for x in param:             #Se le llama argumentos arbitrarios
+def ejemplo2(**param):          #Agregar ** delante del parametro permite recibir un diccionario
+  for x in param:               #Se le llama argumentos arbitrarios
     print(x)
 
-def ejemplo3(nombre="Candy"):  #Define un parámetro predeterminado, asi puedes llamar a la función sin argumentos
+def ejemplo3(nombre="Candy"):   #Define un parámetro predeterminado, asi puedes llamar a la función sin argumentos
     print(nombre)
 
 ejemplo3()
