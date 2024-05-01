@@ -1,4 +1,4 @@
-# 6. Escriba un código que pueda contar todas las palabras mayúsculas de un archivo. 
+# Escribe un código que pueda contar todas las palabras mayúsculas de un archivo. 
 # Al usar with el archivo se cierra solo al terminar
 cont=0
 with open('archivo.txt', 'r') as archivo:
