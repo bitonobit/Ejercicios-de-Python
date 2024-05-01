@@ -1,0 +1,1 @@
+Nota: Las dos descripciones paso a paso del algoritmo que hemos escrito anteriormente se pueden denominar "pseudocódigo". El pseudocódigo es una descripción de lo que hace un programa, utilizando un lenguaje que es algo entre el lenguaje humano y un lenguaje de programación. En este archivo hay cuatro 4 mayúsculas.
