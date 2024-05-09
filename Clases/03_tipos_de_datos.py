@@ -21,6 +21,13 @@ ut labore et dolore magna aliqua."""
 print(a)        # Muestra los saltos de línea
 print(a[0])     # Muestra la L
 
+# **********************************
+#   Anidar comillas
+# **********************************
+print("It's alright")
+print("He is called 'Johnny'")
+print('He is called "Johnny"')
+
 # *******************************************************
 #                   Otros Tipos
 # *******************************************************

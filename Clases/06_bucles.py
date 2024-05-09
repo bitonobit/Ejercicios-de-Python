@@ -1,18 +1,19 @@
 # *******************************************************************************
 #                          Bucles
 # *******************************************************************************
-
 i = 0
 while i < 10:
   print(i)
   i = i + 1
+
 #  Se puede usar break y continue igual que en php o js
 i = 1
 while i < 5:
   print(i)
   i += 1
 else:
-  print("i no es mayor que 5")        #Se ejecuta una vez cuando la condición ya no es verdadera
+  #Se ejecuta una vez cuando la condición ya no es verdadera
+  print("i no es mayor que 5")        
 
 # Bucles a través de una cadena
 for x in "Bitonobit":
