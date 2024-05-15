@@ -1,3 +1,4 @@
+# Visita todas las URLs de un sitio web y las imprime
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, urljoin
@@ -27,6 +28,7 @@ def get_all_urls(base_url):
             if parsed_url.scheme and parsed_url.netloc and absolute_url not in visited_urls:
                 all_urls.append(absolute_url)
                 visited_urls.add(absolute_url)
+                print(link)
 
     # Empezamos con la URL base
     get_urls_from_page(base_url)
@@ -38,7 +40,7 @@ def get_all_urls(base_url):
     return all_urls
 
 # URL base del sitio web que deseas recorrer
-base_url = 'https://example.com'
+base_url = 'https://www.gobiernodecanarias.org/principal/'
 
 # Llamamos a la función para obtener todas las URLs del sitio web
 all_urls = get_all_urls(base_url)

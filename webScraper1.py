@@ -3,7 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 # 2. Poner la url de la web a scrapear
-url = 'https://es.wikipedia.org/wiki/Python'
+url = 'https://portalciencia.ull.es/investigadores'
 # 3. Regoger la respuesta http
 response = requests.get(url)
 # 4. Parsear la respuesta con la biblioteca

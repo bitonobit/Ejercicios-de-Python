@@ -1,4 +1,4 @@
-# Sacar los email de un sitio 
+# Sacar los email de una web, los muestra por consola y los guarda en una lista
 # 1. Importar bibliotecas:
 import requests
 from bs4 import BeautifulSoup
@@ -19,7 +19,7 @@ def buscaEmail(href):
     return lista
 
 # 2. Poner la url de la web a scrapear
-url = 'https://www.ull.es/masteres/listado-masteres/'
+url = 'https://ejemplo.com'
 # 3. Regoger la respuesta http
 response = requests.get(url)
 # 4. Parsear la respuesta con la biblioteca
