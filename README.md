@@ -1,3 +1,5 @@
+![Logo de Python](https://www.python.org/static/community_logos/python-logo.png)
+
 # Curso de Python para Principiantes
 
 ¡Bienvenidos al material del curso de Python para principiantes! Este repositorio contiene recursos y materiales para aprender Python desde cero, diseñado especialmente para aquellos que están dando sus primeros pasos en la programación.
