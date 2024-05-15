@@ -19,6 +19,6 @@ print(sys.version)      # Consultar la versión de python desde el editor
 
 # Entrada y salida de datos
 print("Hola Mundo!")          # Imprime una salida
-input("Dime tu nombre: ")     # Te pide una entrada, drá un tipo texto
-
+nombre=input("Dime tu nombre: ")     # Te pide una entrada, dará un tipo texto
+print("Que tal estás " + nombre + " ?")
 # Python usa sangría para indicar un bloque de código, en lugar de { }

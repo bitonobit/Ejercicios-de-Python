@@ -30,3 +30,14 @@ except:
   print("Upss, error")
 finally:
   print("La excepción ha finalizado")
+
+# Para lanzar (o generar) una excepción, usamos la palabra clave: raise
+x = -1
+if x < 0:
+  raise Exception("No se permiten valores negativos")
+
+# Se puede definir qué tipo de error generar y el texto que se imprimirá al usuario.
+x = "Hola"
+
+if not type(x) is int:
+  raise TypeError("Sólo se permiten números")

@@ -34,7 +34,7 @@ print(saludo)
 pi=3.1415
 res=f"El valor de pi es {pi:.2f}"   #.2f son sólo 2 decimales
 print(res)
-res=f"El valor de pi es {10 *5}"    # Se pueden hacer operaciones matemáticas
+res=f"El valor de pi es {10 *5}"    # Se pueden hacer operaciones matemáticas incluso se pueden llamar funciones 
 
 # *************************************************
 #           Operadores de asignación
