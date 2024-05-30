@@ -1,6 +1,11 @@
-#*******************************************************************************
-#  Libro
-#*******************************************************************************
+# ******************************************************************************
+# ** Crea una biblioteca con autores y libros  que permita: 
+# **    1. Agregar nuevo autor
+# **    2. Agregar lista de libros a un autor
+# **    3. Mostrar todos los autores con sus libros
+# **    4. Eliminar un autor 
+# **    5. Eliminar libros de un autor 
+# ******************************************************************************
 class Libro:
     def __init__(self, titulo, genero, num_paginas):
         self.titulo = titulo

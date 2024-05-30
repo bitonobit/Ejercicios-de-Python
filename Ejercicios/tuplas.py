@@ -1,3 +1,7 @@
+# ******************************************************************************
+# ** Ejercicios de Tuplas                                                     **
+# ******************************************************************************
+
 # 1. Realizar la suma de los elementos de una tupla
 tupla=(7,8,9,1,19,7)
 print(f"Los valores a sumar son: {tupla}")

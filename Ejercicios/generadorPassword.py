@@ -1,3 +1,6 @@
+# ******************************************************************************
+# Escribe una función para generar una contraseña aleatoria que contenga       # letras, números y caracteres especiales, cuya longitud se pueda elegir
+# ******************************************************************************
 import random
 import string
 

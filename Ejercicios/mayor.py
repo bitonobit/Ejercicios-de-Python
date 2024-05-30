@@ -1,5 +1,16 @@
-# Dados dos números, escriba un código Python para encontrar el mayor de estos dos números
+# ******************************************************************************
+#  Dados dos números, escribe una función encontrar el mayor número
+# ******************************************************************************
 def mayor(a,b):
+    """
+    Esta función determina el mayor de dos números dados
+
+    Args:
+        a,b (int): Nímeros a comparar
+
+    Returns:
+        str: Un mensaje que dice cual de los números es mayor o si son iguales
+    """
     if a>b:    
         return f"a= {a} es mayor que b={b}"
     elif a<b:

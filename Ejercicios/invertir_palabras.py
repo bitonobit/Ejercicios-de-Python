@@ -1,4 +1,6 @@
-# Invertir palabras enteras de una cadena dada. Hablar como Yoda :)
+# ******************************************************************************
+# Escribe una función para invertir palabras enteras de una cadena dada (frase) # y hablar como Yoda :)
+# ******************************************************************************
 def palindromo(frase):
     palabras= frase.split( )            #Corta la frase en palabras
     aux=' '.join(reversed(palabras))    #Vuelve a unir la cadena

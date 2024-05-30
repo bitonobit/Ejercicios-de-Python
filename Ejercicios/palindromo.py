@@ -1,4 +1,7 @@
-# Invertir letras de una palabra dada y ver si se lee igual
+# ******************************************************************************
+#  Escribir una función para comprobar si una palabra es palíndrome. Es 
+#  decir, si se lee igual de izquierda a derecha que de derecha a izquierda
+# ******************************************************************************
 def palindromo(p):
     # palabra= p.split( )
     aux=''.join(reversed(p))

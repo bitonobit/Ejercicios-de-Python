@@ -1,4 +1,6 @@
-# Escribe un programa para producir la serie Fibonacci en Python.
+# ******************************************************************************
+#  Escribe un programa para producir la serie Fibonacci en Python.
+# ******************************************************************************
 def fibo(terminos):
     if n>=1:
         t1=0

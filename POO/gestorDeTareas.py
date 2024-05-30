@@ -1,3 +1,6 @@
+# ******************************************************************************
+# ** Gestor de tareas                                                         **
+# ******************************************************************************
 class Tareas:                            #Crea la clase tareas
     def __init__(self):                  #Constructor de la clase, crea la lista
         self.tareas = []

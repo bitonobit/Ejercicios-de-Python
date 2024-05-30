@@ -1,4 +1,7 @@
-# El biorritmo es una teoría que sugiere que nuestras vidas están influenciadas por ciclos biológicos que afectan nuestro estado físico, emocional e intelectual.
+# ******************************************************************************
+# **                                                                          **
+# ******************************************************************************
+#  El biorritmo es una teoría que sugiere que nuestras vidas están influenciadas por ciclos biológicos que afectan nuestro estado físico, emocional e intelectual.
 import math
 
 def calcular_biorritmo(dia_nacimiento, dia_actual, ciclo):
