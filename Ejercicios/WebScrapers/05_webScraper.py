@@ -1,4 +1,6 @@
+# ******************************************************************************
 # Visita todas las URLs de un sitio web y las imprime
+# ******************************************************************************
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, urljoin

@@ -1,4 +1,6 @@
+# ******************************************************************************
 # Sacar los email de una web usando una expresión regular
+# ******************************************************************************
 import requests
 from bs4 import BeautifulSoup
 import re

@@ -1,4 +1,6 @@
+# ******************************************************************************
 # Obtiene los hipervínculos de una web
+# ******************************************************************************
 # 1. Importar bibliotecas:
 import requests
 from bs4 import BeautifulSoup

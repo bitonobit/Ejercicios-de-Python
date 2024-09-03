@@ -1,4 +1,6 @@
+# ******************************************************************************
 # Sacar los email de una web, los muestra por consola y los guarda en una lista
+# ******************************************************************************
 # 1. Importar bibliotecas:
 import requests
 from bs4 import BeautifulSoup
