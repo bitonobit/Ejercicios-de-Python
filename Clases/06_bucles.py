@@ -35,7 +35,7 @@ for x in range(6):
 for x in range(2, 6):
   print(x)
 
-for x in range(1, 30, 3):
+for x in range(1, 30, 3): #El tercer parámetro es el incremento
   print(x)                #Cuenta del 1 al 30, pero de 3 en 3
 else:
   print("Terminé!")
